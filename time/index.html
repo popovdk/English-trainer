@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Тренажёр: как назвать время по-английски. Двигайте стрелки часов и смотрите британский вариант." />
+    <title>Время по часам — English Trainer</title>
+  </head>
+  <body>
+    <header id="app-header"></header>
+
+    <main class="container page">
+      <a class="back-link" href="../">← Все тренажёры</a>
+      <div class="page-head">
+        <h1 class="page-title">Который час?</h1>
+        <p class="page-lead">Двигайте стрелки — и смотрите, как сказать время по-британски.</p>
+      </div>
+
+      <div class="time-layout">
+        <section class="card clock-card" aria-label="Часы">
+          <div class="clock-legend" aria-hidden="true">
+            <span class="clock-legend__item clock-legend__item--to"><b>to</b> до часа</span>
+            <span class="clock-legend__item clock-legend__item--past">после часа <b>past</b></span>
+          </div>
+          <div class="clock-wrap" id="clock"></div>
+          <p class="clock-hint">Тяните минутную <span class="dot dot--minute"></span> или часовую <span class="dot dot--hour"></span> стрелку</p>
+
+          <div class="controls">
+            <div class="stepper">
+              <button class="round-btn" type="button" data-action="minus" aria-label="Назад"></button>
+              <button class="btn btn--primary" type="button" data-action="random"></button>
+              <button class="round-btn" type="button" data-action="plus" aria-label="Вперёд"></button>
+            </div>
+            <div class="controls__row">
+              <div class="segmented" role="radiogroup" aria-label="Шаг минутной стрелки" data-group="step">
+                <button type="button" role="radio" data-value="5">5 мин</button>
+                <button type="button" role="radio" data-value="1">1 мин</button>
+              </div>
+              <div class="segmented" role="radiogroup" aria-label="Время суток" data-group="period">
+                <button type="button" role="radio" data-value="am">a.m.</button>
+                <button type="button" role="radio" data-value="pm">p.m.</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card answer-card" aria-live="polite">
+          <div class="answer__digital">
+            <span class="answer__time" id="digital"></span>
+            <span class="answer__meta" id="digital-meta"></span>
+          </div>
+          <div class="answer__phrase-row">
+            <p class="answer__phrase" id="phrase" lang="en-GB"></p>
+            <button class="speak-btn" type="button" id="speak" aria-label="Послушать произношение" hidden></button>
+          </div>
+          <p class="answer__explain" id="explain"></p>
+
+          <dl class="answer__list">
+            <div><dt>Полностью</dt><dd id="full" lang="en-GB"></dd></div>
+            <div><dt>Как на табло</dt><dd id="digital-words" lang="en-GB"></dd></div>
+            <div><dt>По-русски</dt><dd id="russian"></dd></div>
+          </dl>
+        </section>
+      </div>
+
+      <section class="card rules" aria-labelledby="rules-title">
+        <h2 class="section-title" id="rules-title">Как назвать время: 3 шага</h2>
+        <ol class="steps">
+          <li>
+            <b>Посмотрите на минутную стрелку.</b> Справа (1–30 минут) — говорим <em class="tag tag--past">past</em>,
+            слева (31–59) — <em class="tag tag--to">to</em>.
+          </li>
+          <li>
+            <b>Назовите минуты.</b> Справа — сколько прошло, слева — сколько осталось до следующего часа.
+            15 минут — <em lang="en-GB">quarter</em>, 30 — <em lang="en-GB">half</em>.
+          </li>
+          <li>
+            <b>Назовите час.</b> Для <em class="tag tag--past">past</em> — текущий, для <em class="tag tag--to">to</em> — следующий.
+            Ровно — <em class="tag tag--exact">o'clock</em>.
+          </li>
+        </ol>
+
+        <h3 class="rules__subtitle">Примеры — нажмите, чтобы поставить на часах</h3>
+        <div class="examples" id="examples"></div>
+
+        <h3 class="rules__subtitle">Полезно знать</h3>
+        <ul class="notes">
+          <li>Если минут не кратно пяти, добавляем <i lang="en-GB">minutes</i>: <i lang="en-GB">twenty-three minutes past four</i>, <i lang="en-GB">one minute to five</i>.</li>
+          <li>В разговоре британцы часто говорят <i lang="en-GB">half three</i> — это <b>3:30</b>, то есть «половина четвёртого», а не третьего!</li>
+          <li>Можно и «как на табло»: <i lang="en-GB">two forty</i>, <i lang="en-GB">five oh five</i> — так говорят о расписаниях.</li>
+          <li><i lang="en-GB">a.m./p.m.</i> чаще пишут, а в речи говорят <i lang="en-GB">in the morning / in the afternoon / in the evening / at night</i>.</li>
+          <li>12:00 дня — <i lang="en-GB">midday</i> (или <i lang="en-GB">noon</i>), 00:00 — <i lang="en-GB">midnight</i>.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script type="module" src="/src/trainers/time/page.js"></script>
+  </body>
+</html>
