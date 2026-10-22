@@ -9,6 +9,7 @@
 | Тренажёр | Ссылка |
 | --- | --- |
 | Время по часам — двигаете стрелки, видите британский вариант, русский перевод и слушаете произношение | [`/time/`](https://popovdk.github.io/English-trainer/time/) |
+| Время: проверь себя — 4 режима (скажи вслух, выбери фразу, фраза → цифры, a.m./p.m. и ошибки), счёт и серии | [`/time-quiz/`](https://popovdk.github.io/English-trainer/time-quiz/) |
 
 Можно открыть тренажёр сразу с нужным временем: `/time/?t=14:40`.
 
@@ -26,10 +27,12 @@ npm run build    # сборка в dist/
 ```
 index.html                 главная
 time/index.html            тренажёр «Время по часам»
+time-quiz/index.html       тренажёр «Время: проверь себя»
 src/app.js                 общая инициализация (шапка, service worker)
 src/nav.js                 список тренажёров (главная + бургер-меню)
 src/components/header.js   шапка и бургер-меню
 src/trainers/time/         циферблат, перевод времени, озвучка
+src/trainers/time-quiz/    задания, варианты ответов, банк вопросов
 public/                    иконки, манифест, service worker
 ```
 

@@ -15,4 +15,13 @@ export const trainers = [
     icon: icons.clock,
     color: 'blue',
   },
+  {
+    id: 'time-quiz',
+    url: `${base}time-quiz/`,
+    title: 'Время: проверь себя',
+    description: 'Скажи вслух, выбери фразу, переведи в цифры — со счётом и сериями',
+    level: 'A1–B1',
+    icon: icons.target,
+    color: 'purple',
+  },
 ];

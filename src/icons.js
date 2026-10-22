@@ -10,6 +10,7 @@ export const icons = {
     <text x="32" y="34.5" text-anchor="middle" font-family="Onest, Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="var(--primary)">En</text>
   </svg>`,
   clock: svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', 28),
+  target: svg('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>', 28),
   menu: svg('<path d="M4 7h16M4 12h16M4 17h16"/>'),
   close: svg('<path d="M6 6l12 12M18 6L6 18"/>'),
   home: svg('<path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/>', 22),

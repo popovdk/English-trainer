@@ -71,9 +71,11 @@ function buildSvg() {
 export class Clock {
   /**
    * @param {HTMLElement} root
-   * @param {{ time: number, step?: number, onChange?: (total: number) => void }} options
+   * @param {{ time: number, step?: number, interactive?: boolean, hints?: boolean,
+   *   onChange?: (total: number) => void }} options
+   * interactive: false — только показ; hints: false — без подсветки past/to и часа (для заданий).
    */
-  constructor(root, { time, step = 5, onChange = () => {} }) {
+  constructor(root, { time, step = 5, interactive = true, hints = true, onChange = () => {} }) {
     root.innerHTML = buildSvg();
     this.svg = root.querySelector('svg');
     this.hourHand = this.svg.querySelector('.clock__hand--hour');
@@ -89,9 +91,23 @@ export class Clock {
     this.shown = this.target;
     this.raf = 0;
 
-    this.bindPointer();
-    this.bindKeyboard();
+    if (interactive) {
+      this.bindPointer();
+      this.bindKeyboard();
+    } else {
+      this.svg.classList.add('clock--static');
+      for (const hand of [this.hourHand, this.minuteHand]) {
+        hand.removeAttribute('tabindex');
+        hand.removeAttribute('role');
+      }
+    }
+    this.setHints(hints);
     this.render();
+  }
+
+  /** Показать/скрыть цветовые подсказки (past/to, называемый час). */
+  setHints(on) {
+    this.svg.classList.toggle('clock--plain', !on);
   }
 
   get time() {

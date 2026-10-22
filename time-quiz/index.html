@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Тренажёр: проверьте, как быстро и без ошибок вы называете время по-английски." />
+    <title>Время: проверь себя — English Trainer</title>
+  </head>
+  <body>
+    <header id="app-header"></header>
+
+    <main class="container page">
+      <a class="back-link" href="../">← Все тренажёры</a>
+      <div class="page-head">
+        <h1 class="page-title" lang="en-GB">What's the <span class="accent">time?</span></h1>
+        <p class="page-lead">Проверьте себя: называйте время по-английски быстро и без ошибок.</p>
+      </div>
+
+      <div class="stats" aria-live="polite">
+        <div class="stat"><span class="stat__value" id="stat-correct">0</span><span class="stat__label">верно</span></div>
+        <div class="stat"><span class="stat__value" id="stat-total">0</span><span class="stat__label">всего</span></div>
+        <div class="stat stat--streak"><span class="stat__value" id="stat-streak">0</span><span class="stat__label">подряд</span></div>
+        <button class="stats__reset" type="button" id="stats-reset">Сбросить</button>
+      </div>
+
+      <div class="modes" role="radiogroup" aria-label="Режим" id="modes">
+        <button type="button" role="radio" data-mode="say"><b>1.</b> Скажи вслух</button>
+        <button type="button" role="radio" data-mode="choose"><b>2.</b> Выбери фразу</button>
+        <button type="button" role="radio" data-mode="digits"><b>3.</b> Фраза → цифры</button>
+        <button type="button" role="radio" data-mode="mistakes"><b>4.</b> a.m./p.m. и ошибки</button>
+      </div>
+
+      <div class="toggles" id="toggles">
+        <label class="toggle"><input type="checkbox" data-setting="anyMinutes" /><span class="toggle__track"></span>Любые минуты (не только по 5)</label>
+        <label class="toggle"><input type="checkbox" data-setting="h24" /><span class="toggle__track"></span>24-часовой формат (17:10)</label>
+        <label class="toggle"><input type="checkbox" data-setting="showClock" /><span class="toggle__track"></span>Показывать циферблат</label>
+      </div>
+
+      <section class="card quiz" id="quiz" aria-live="polite"></section>
+
+      <details class="card cheat">
+        <summary>Шпаргалка по правилам</summary>
+        <div class="cheat__body">
+          <ol class="steps">
+            <li>Минутная стрелка справа (1–30 минут) — <em class="tag tag--past">past</em>, слева (31–59) — <em class="tag tag--to">to</em>.</li>
+            <li>Справа называем, сколько прошло, слева — сколько осталось. 15 — <i lang="en-GB">quarter</i>, 30 — <i lang="en-GB">half</i>.</li>
+            <li>Для <em class="tag tag--past">past</em> — текущий час, для <em class="tag tag--to">to</em> — следующий. Ровно — <em class="tag tag--exact">o'clock</em>.</li>
+          </ol>
+          <table class="cheat__table">
+            <tbody>
+              <tr><td>5:00</td><td lang="en-GB">five o'clock</td></tr>
+              <tr><td>5:10</td><td lang="en-GB">ten past five · five ten</td></tr>
+              <tr><td>5:15</td><td lang="en-GB">(a) quarter past five</td></tr>
+              <tr><td>5:30</td><td lang="en-GB">half past five · <span class="muted">разг.</span> half five</td></tr>
+              <tr><td>5:40</td><td lang="en-GB">twenty to six · five forty</td></tr>
+              <tr><td>5:45</td><td lang="en-GB">(a) quarter to six</td></tr>
+              <tr><td>5:23</td><td lang="en-GB">twenty-three minutes past five</td></tr>
+            </tbody>
+          </table>
+          <ul class="notes">
+            <li><i lang="en-GB">a.m.</i> — до полудня, <i lang="en-GB">p.m.</i> — после. В речи чаще: <i lang="en-GB">in the morning</i> (5–12), <i lang="en-GB">in the afternoon</i> (12–17), <i lang="en-GB">in the evening</i> (17–21), <i lang="en-GB">at night</i>.</li>
+            <li>12:00 — <i lang="en-GB">midday / noon</i>, 00:00 — <i lang="en-GB">midnight</i>.</li>
+            <li>С точным временем — предлог <i lang="en-GB">at</i>: <i lang="en-GB">at five o'clock</i>.</li>
+            <li><i lang="en-GB">O'clock</i> — только для ровного часа. Часы в речи — от 1 до 12, не <i lang="en-GB">seventeen</i>.</li>
+          </ul>
+          <a class="cheat__link" href="../time/">Покрутить стрелки в тренажёре «Время по часам» →</a>
+        </div>
+      </details>
+    </main>
+
+    <script type="module" src="/src/trainers/time-quiz/page.js"></script>
+  </body>
+</html>

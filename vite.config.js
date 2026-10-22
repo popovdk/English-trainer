@@ -41,6 +41,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         time: resolve(import.meta.dirname, 'time/index.html'),
+        timeQuiz: resolve(import.meta.dirname, 'time-quiz/index.html'),
       },
     },
   },
